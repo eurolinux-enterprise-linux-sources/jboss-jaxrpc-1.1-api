@@ -3,7 +3,7 @@
 
 Name:             jboss-jaxrpc-1.1-api
 Version:          1.0.1
-Release:          4%{dist}
+Release:          7%{?dist}
 Summary:          Java API for XML-Based RPC (JAX-RPC) 1.1
 Group:            Development/Libraries
 License:          CDDL or GPLv2 with exceptions
@@ -23,7 +23,6 @@ BuildRequires:    maven-install-plugin
 BuildRequires:    maven-jar-plugin
 BuildRequires:    maven-javadoc-plugin
 BuildRequires:    maven-enforcer-plugin
-BuildRequires:    maven-plugin-cobertura
 BuildRequires:    maven-dependency-plugin
 BuildRequires:    maven-ear-plugin
 BuildRequires:    maven-ejb-plugin
@@ -79,6 +78,15 @@ cp -rp target/site/apidocs/* $RPM_BUILD_ROOT%{_javadocdir}/%{name}
 %doc LICENSE
 
 %changelog
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.0.1-7
+- Mass rebuild 2013-12-27
+
+* Fri Dec 13 2013 Ade Lee <alee@redhat.com> 1.0.1-6
+- Fix spec file dist tag for rpmlint
+
+* Wed Nov 13 2013 Mikolaj Izdebski <mizdebsk@redhat.com> - 1.0.1-5
+- Remove unneeded BR: maven-plugin-cobertura
+
 * Thu May 9 2013 Ade Lee <alee@redhat.com> 1.0.1-4
 - Resolves #961461 - Remove unneeded maven-checkstyle-plugin BR
 
